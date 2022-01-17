@@ -13,18 +13,6 @@ const Home = (props) => {
     alert(`Parameter passed is ${Name}`)
   }
 
-  // const data = [
-  //   { id: 1, name: 'Apple', age: 21, favcolor: 'blue' },
-  //   { id: 2, name: 'React', age: 24, favcolor: 'blue' },
-  //   { id: 3, name: 'Samsung', age: 28, favcolor: 'Purple' },
-  // ]
-  // const listItems = data.map((d) => (
-  //   <p key={d.id}>
-  //     {d.name} is {d.age} years old in {d.favcolor} color dress
-  //   </p>
-  // ))
-
-  // <h3>{listItems}</h3>
   const [count, setCount] = useState(0)
 
   useEffect(() => {
