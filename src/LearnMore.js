@@ -1,12 +1,13 @@
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
 // import img2 from './peaches_spices.jpg'
 const LearnMore = (props) => {
-  // const details = props.details
+  const color = props.Color
+  const textColor = props.textColor
 
   const location = useLocation()
-  const { name, id, image, ings } = location.state
+  const { name, image, ings } = location.state
   return (
-    <div>
+    <div style={{ color: textColor, backgroundColor: color }}>
       <img
         src={image}
         alt=''
@@ -14,11 +15,10 @@ const LearnMore = (props) => {
         style={{ width: '400px', padding: '3em' }}
       />
       <p>
-        <h2>Name: {name}</h2>
+        <h2 style={{ color: textColor }}>Name: {name}</h2>
       </p>
-      <p>
-        <h3>Ingedriens: {ings}</h3>
-      </p>
+
+      <h3 style={{ color: textColor, padding: '3em' }}>Ingedriens: {ings}</h3>
     </div>
   )
 }

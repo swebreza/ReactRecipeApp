@@ -9,10 +9,10 @@ const Grids = (props) => {
   return (
     <div style={{ backgroundColor: props.Color }}>
       <Grid container spacing={3}>
-        <Grid item xs={6} sm={3} className='card'>
-          <Paper className='paper'>
-            {details.map((d) => (
-              <div key={d.id}>
+        {details.map((d) => (
+          <Grid item xs={3} className='card'>
+            <Paper className='paper'>
+              <div key={d.id} style={{ paddingTop: '2em' }}>
                 <a href='#'>
                   <img
                     src={img3}
@@ -24,7 +24,13 @@ const Grids = (props) => {
                     }}
                   />
                 </a>
-                <img src={d.image} alt='' id='image' srcset='' />
+                <img
+                  src={d.image}
+                  alt=''
+                  id='image'
+                  srcset=''
+                  style={{ height: '270px' }}
+                />
                 <Link
                   to={{
                     pathname: '/LearnMore',
@@ -39,28 +45,27 @@ const Grids = (props) => {
                 >
                   Learn More
                 </Link>
-
-                <Link
-                  to={{
-                    pathname: '/Editable',
-                    state: {
-                      id: d.id,
-                      image: d.image,
-                      name: d.name,
-                      ings: d.ings,
-                    },
-                  }}
-                  id='myButton'
-                >
-                  Edit
-                </Link>
               </div>
-            ))}
-          </Paper>
-        </Grid>
+            </Paper>
+          </Grid>
+        ))}
       </Grid>
     </div>
   )
 }
 
 export default Grids
+//  <Link
+//                   to={{
+//                     pathname: '/Editable',
+//                     state: {
+//                       id: d.id,
+//                       image: d.image,
+//                       name: d.name,
+//                       ings: d.ings,
+//                     },
+//                   }}
+//                   id='myButton'
+//                 >
+//                   Edit
+//                 </Link>

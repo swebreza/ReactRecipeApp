@@ -1,46 +1,45 @@
 import React from 'react'
-import { useState } from 'react'
 
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
-const Editable = (props) => {
+const Editable = ({ editformdata, handeleditformchange, Color, textColor }) => {
   const location = useLocation()
-  const { name, id, image, ings } = location.state
-  const [editFormData, setEditFormData] = useState({
-    image: '',
-    name: '',
-    ings: '',
-  })
-  const [editContactId, setEditContactId] = useState(null)
-  const handleEditFormChange = (event) => {
-    event.preventDefault()
+  const { name, image, ings } = location.state
+  // const [editFormData, setEditFormData] = useState({
+  //   image: '',
+  //   name: '',
+  //   ings: '',
+  // })
+  // const [editContactId, setEditContactId] = useState(null)
+  // const handleEditFormChange = (event) => {
+  //   event.preventDefault()
 
-    const fieldName = event.target.getAttribute('name')
-    const fieldValue = event.target.value
+  //   const fieldName = event.target.getAttribute('name')
+  //   const fieldValue = event.target.value
 
-    const newFormData = { ...editFormData }
-    newFormData[fieldName] = fieldValue
+  //   const newFormData = { ...editFormData }
+  //   newFormData[fieldName] = fieldValue
 
-    setEditFormData(newFormData)
-  }
-  const [addFormData, setAddFormData] = useState({
-    image: '',
-    name: '',
-    ings: '',
-  })
-  const handleEditClick = (event, contact) => {
-    event.preventDefault()
-    setEditContactId(id)
+  //   setEditFormData(newFormData)
+  // }
+  // const [addFormData, setAddFormData] = useState({
+  //   image: '',
+  //   name: '',
+  //   ings: '',
+  // })
+  // const handleEditClick = (event, contact) => {
+  //   event.preventDefault()
+  //   setEditContactId(id)
 
-    const formValues = {
-      image: addFormData.image,
-      name: addFormData.name,
-      ings: addFormData.ings,
-    }
+  //   const formValues = {
+  //     image: addFormData.image,
+  //     name: addFormData.name,
+  //     ings: addFormData.ings,
+  //   }
 
-    setEditFormData(formValues)
-  }
+  //   setEditFormData(formValues)
+  // }
   return (
-    <div style={{ backgroundColor: props.Color }}>
+    <div style={{ backgroundColor: Color, color: textColor }}>
       <form>
         <div>
           <p>
@@ -48,8 +47,9 @@ const Editable = (props) => {
             <input
               type='text'
               name='image'
-              value={editFormData.image}
-              onChange={handleEditFormChange}
+              value={image}
+              placeholder='Image'
+              onChange={handeleditformchange}
             />
           </p>
 
@@ -58,8 +58,9 @@ const Editable = (props) => {
             <input
               type='text'
               name='name'
-              value={editFormData.name}
-              onChange={handleEditFormChange}
+              value={name}
+              placeholder='Name'
+              onChange={handeleditformchange}
             />
           </p>
 
@@ -68,8 +69,9 @@ const Editable = (props) => {
             <input
               type='text'
               name='ings'
-              value={editFormData.ings}
-              onChange={handleEditFormChange}
+              value={ings}
+              placeholder='Ingridense'
+              onChange={handeleditformchange}
             />
           </p>
 

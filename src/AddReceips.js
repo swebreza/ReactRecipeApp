@@ -1,6 +1,11 @@
 // import { useState } from 'react'
 
-const AddReceips = ({ handelAddSubmit, handelAddFormChange, Color }) => {
+const AddReceips = ({
+  handelAddSubmit,
+  handelAddFormChange,
+  Color,
+  textColor,
+}) => {
   // const [addFormData, setAddFormData] = useState({
   //   image: '',
   //   name: '',
@@ -29,7 +34,7 @@ const AddReceips = ({ handelAddSubmit, handelAddFormChange, Color }) => {
   // }
 
   return (
-    <div style={{ backgroundColor: Color }}>
+    <div style={{ backgroundColor: Color, color: textColor }}>
       <form onSubmit={handelAddSubmit}>
         <div>
           <p>
@@ -52,6 +57,21 @@ const AddReceips = ({ handelAddSubmit, handelAddFormChange, Color }) => {
           </button>
         </div>
       </form>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   )
 }

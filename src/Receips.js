@@ -4,6 +4,7 @@ import React from 'react'
 import Grids from './Grids'
 const Receips = (props) => {
   const details = props.details
+  const textColor = props.textColor
   const setdetails = props.setdetails
   const handleDelete = (id) => {
     const newDetails = details.filter((d) => d.id !== id)
@@ -16,13 +17,31 @@ const Receips = (props) => {
         padding: '10px',
         height: '100%',
         backgroundColor: props.Color,
+        color: textColor,
       }}
     >
-      <Grids
-        details={details}
-        handleDelete={handleDelete}
-        Color={props.Color}
-      />
+      {' '}
+      <p>
+        <Grids
+          details={details}
+          handleDelete={handleDelete}
+          Color={props.Color}
+        />
+      </p>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   )
 }
